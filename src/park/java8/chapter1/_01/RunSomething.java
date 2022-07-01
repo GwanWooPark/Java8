@@ -1,4 +1,4 @@
-package park.java8;
+package park.java8.chapter1._01;
 
 // 추상 메서드가 하나만 있으면 함수형 인터페이스
 @FunctionalInterface

@@ -1,4 +1,4 @@
-package park.java8;
+package park.java8.chapter1._01;
 
 public class Main {
     public static void main(String[] args) {
