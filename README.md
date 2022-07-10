@@ -96,6 +96,7 @@ public interface UseLambda {
 public class Main {
     public static void main(String[] args) {
         
+        // 람다 표현식
         UseLambda useLambda = (a, b) -> a + b;
         System.out.println(useLambda.add(5, 10)); 
         useLambda.printAge();
