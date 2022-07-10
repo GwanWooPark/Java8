@@ -1,11 +1,43 @@
 # Java8
 자바8 공부
 
+
 ## 1. 함수형 인터페이스와 람다 표현식
 
 ###  함수형 인터페이스 (Functional Interface)
 - 추상 메소드를 오직 한 개만 가지고 있는 인터페이스 
 - @FunctionalInterface Annotation을 가지고 있는 인터페이스
+- 함수를 <span style="color:red">일급 객체</span>처럼 다룰 수 있다.
+
+  <b>일급 객체</b>
+  - 변수에 값을 할당할 수 있어야 함
+  ~~~javascript
+  let sum = function (a, b){
+        return a + b;
+  };
+  ~~~
+  - 다른 함수의 파라미터로 넘겨줄 수 있어야 함
+  ~~~javascript
+  function mul(num) {
+        return num * num;
+  }
+  
+  function func(mul, num)  {
+        return mul(num);
+  }
+
+  let result = func(mul, 2); // 4
+  ~~~
+  - 함수의 반환 값이 될 수 있어야 함
+  ~~~javascript
+  function plus(a) {
+        return function (b) {
+            return a + b;
+    };
+  }
+  
+  plus(3)(5); // 8
+  ~~~~
 
 ### 람다 표현식(Lambda Expression)
 - 함수형 인터페이스의 인스턴스를 만드는 방법으로 쓰일 수 있다.
