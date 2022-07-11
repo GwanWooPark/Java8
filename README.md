@@ -175,7 +175,30 @@ public class Main {
 
 
 
+## Optional
 
+### Optional
+- T 타입의 객체를 포장해주는 래퍼 클래스(Wrapper class)
+- Optional 인스턴스는 모든 타입의 참조 변수 저장 가능
+- Null이 아닌 값을 포함하거나 포함하지 않을 수 있는 컨테이너 객체
+
+**주의 사항**
+  - 리턴 값으로만 쓰기를 권장
+  - Optional을 리턴하는 메소드에서 Null 리턴 X
+  - Collection, Map, Stream, Array, Optional은 Optional로 감싸지 말 것 (그 자체로 Null을 처리할 수 있기 때문에)
+
+### 기본 Optional API
+| API                                                  | 기능                                                       |
+|------------------------------------------------------|----------------------------------------------------------|
+| of(T value)<br/>ofNullable(T value)<br/>empty()      | Optional 만들기                                             |
+| isPresent()<br/>isEmpty()                            | Optional 값 확인                                            |
+| get()                                                | Optional에서 값이 있으면 반환하고, 없으면 Throw NuSuchElementException |
+| ifPresent(Consumer<? super T> consumer)              | Optional에 값이 있는 경우 그 값을 가지고 ~~ 하고, 없는 경우에 아무것도 하지 않음     |
+| orElse(T other)                                      | Optional에 값이 있으면 가져오고 없는 경우에 ~~ 리턴                       |
+| orElseGet(Supplier<? extends T> other)               | Optional에 값이 있으면 가져오고 없는 경우에 ~~ 하라                       |
+| orElseThrow(Supplier<? extends X> exceptionSupplier) | Optional에 값이 있으면 가져오고 없는 경우 에러 Throw                     |
+| filter(Predicate<? super T> predicate)               | Optional에 있는 값 걸러내기                                      |
+| map(Function<? super T,? extends U> mapper)          | Optional에 들어있는 값 변환하기                                    |
 
 
 ---
