@@ -18,7 +18,9 @@ public class App {
         springClasses.add(new OnlineClass(4, "spring core", false));
         springClasses.add(new OnlineClass(5, "rest api development", false));
 
+        System.out.println("===============================================================");
         System.out.println("spring으로 시작하는 수업");
+        System.out .println("===============================================================");
         // TODO
         springClasses.stream()
                 // 조건 (Filter)
@@ -27,6 +29,7 @@ public class App {
 
         System.out.println("===============================================================");
         System.out.println("close 되지 않은 수업");
+        System.out.println("===============================================================");
         // TODO
         springClasses.stream()
                 .filter(Predicate.not(OnlineClass::isClosed))
@@ -34,6 +37,7 @@ public class App {
 
         System.out.println("===============================================================");
         System.out.println("수업 이름만 모아서 스트림 만들기");
+        System.out.println("===============================================================");
         // TODO
         springClasses.stream()
                 .map(OnlineClass::getTitle)
@@ -51,13 +55,16 @@ public class App {
 
         System.out.println("===============================================================");
         System.out.println("두 수업 목록에 들어있는 모든 수업 출력");
+        System.out.println("===============================================================");
         // TODO
         // List<List<OnlineClass>> -> stream을 거쳐 List<OnlineClass>가 됨
-        parkEvents.stream().flatMap(Collection::stream)
-                        .forEach(s -> System.out.println(s.getTitle()));
+        parkEvents.stream()
+                .flatMap(Collection::stream)
+                .forEach(s -> System.out.println(s.getTitle()));
 
         System.out.println("===============================================================");
         System.out.println("10부터 1씩 증가하는 무제한 스트림중에서 앞에 10개 빼고 최대 10개 까지만");
+        System.out.println("===============================================================");
         // TODO
         // 중계 Operation
         Stream.iterate(1, i -> i + 1)
@@ -67,6 +74,7 @@ public class App {
 
         System.out.println("===============================================================");
         System.out.println("자바 수업 중에 Test가 들어있는 수업이 있는지 확인");
+        System.out.println("===============================================================");
         // TODO
         boolean test = javaClasses.stream()
                 .anyMatch(oc -> oc.getTitle().contains("Test"));
@@ -74,6 +82,7 @@ public class App {
 
         System.out.println("===============================================================");
         System.out.println("스프링 수업 중에 제목에 spring이 들어간 것만 모아서 List로 만들기");
+        System.out.println("===============================================================");
         // TODO
         List<String> spring = springClasses.stream()
                 .map(OnlineClass::getTitle)
@@ -81,5 +90,15 @@ public class App {
                 .collect(Collectors.toList());
 
         spring.forEach(System.out::println);
+
+        System.out.println("===============================================================");
+        System.out.println("parksEvent에서 제목만 뽑아 출력하기");
+        System.out.println("===============================================================");
+
+        parkEvents.stream()
+                .flatMap(Collection::stream)
+                .map(OnlineClass::getTitle)
+                .forEach(System.out::println);
+
     }
 }
