@@ -1,7 +1,6 @@
 package park.java8.chpater6._03;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.*;
 
 public class App {
