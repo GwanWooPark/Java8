@@ -201,6 +201,25 @@ public class Main {
 | map(Function<? super T,? extends U> mapper)          | Optional에 들어있는 값 변환하기                                    |
 
 
+## CompletableFuture
+
+### Concurrent 소프트웨어
+- 동시에 여러 작업을 할 수 있는 소프트웨어
+- 자바에서 지원 하는 Concurrent Programming
+  - 멀티 프로세싱 (Process Builder)
+  - 멀티 쓰레드
+- 자바 멀티 쓰레드 프로그래밍
+  - Thread / Runnable
+
+### Executors
+- 고수준(High-Level) Concurrency 프로그래밍
+- 쓰레드를 만들고 관리하는 작업을 애플리케이션에서 분리
+- 그러한 기능을 Executors에게 위임
+- Executors가 하는 일
+  - 쓰레드 만들기: 애플리케이션이 사용할 쓰레드 풀을 만들어 관리
+  - 쓰레드 관리: 쓰레드 생명 주기를 관리
+  - 작업 처리 및 실행: 쓰레드로 실행할 작업을 제공할 수 있는 API를 제공
+
 ---
 ## Reference
 - 백기선, 더 자바, Java 8(인프런 PDF 자료 참고)
